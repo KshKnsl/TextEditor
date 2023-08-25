@@ -1,4 +1,4 @@
-# TextEditor
-This is my first GitHub repository
-Here,I have designed a console-based text editor.
-Author--Kush Kansal
+# TextEditor<br><hr>
+This is my first GitHub repository<br>
+Here, I have designed a console-based text editor.<br>
+Author--Kush Kansal<br>
