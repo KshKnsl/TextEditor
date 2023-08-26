@@ -419,7 +419,7 @@ public class TextEditor
         System.out.println("||    \\    /  \\    /  |_____ |      |       |     | | \\  / | |_____    || ");
         System.out.println("||     \\  /    \\  /   |      |      |       |     | |  \\/  | |         || ");
         System.out.println("||      \\/      \\/    |===== |_____ |====== \\=====/ |      | |=====    || ");
-        System.out.println("||                           TO K's TEXT EDITOR                        ||   ");                                                   
+        System.out.println("||                          TO KK's TEXT EDITOR                        ||   ");                                                   
         System.out.println("||     MENU:-                                                          ||   ");       
         System.out.println("||   1.CREATE A NEW DOCUMENT                                           ||   ");
         System.out.println("||   2.TO READ AN EXISTING DOCUMENT                                    ||   ");
