@@ -243,6 +243,8 @@ public class TextEditor
          sc.nextLine();
          sc.nextLine();
          System.out.print("\f");
+         System.out.print("\033[H\033[2J");
+         System.out.flush();
          System.out.print(str);
          sc.nextLine();
          System.out.println();
