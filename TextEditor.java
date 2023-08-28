@@ -3,10 +3,10 @@ import java.io.*;
 public class TextEditor
 {
 
-    Scanner sc;    
-    int choice,nol;
-    static String fileName;
-    String str;
+    private Scanner sc;    
+    private int choice,nol;
+    private static String fileName;
+    private String str;
     
     public static void main() throws IOException
     {
@@ -83,7 +83,7 @@ public class TextEditor
     }
     
     
-    void count_No_Of_Line()throws IOException
+    private void count_No_Of_Line()throws IOException
     {
         FileReader fr = new FileReader(fileName);
         BufferedReader br= new BufferedReader(fr);            
@@ -157,19 +157,21 @@ public class TextEditor
         br.close();
     }
     
-    void copy() throws IOException
+    private void copy() throws IOException
     {
          String st;        
          str="";
          int i;
          FileReader fr= new FileReader(fileName);
          BufferedReader br = new BufferedReader(fr);
+        
          System.out.println("These are a few options for copying ");
          System.out.println("1.Copy entire file");
          System.out.println("2.Copy a group of lines");
          System.out.println("3.Copy a entire line");
          System.out.println("4.Copy a sequence of characters");
          int choice = sc.nextInt();
+        
          int stind,endind,l,u;
          switch(choice)
          {
@@ -238,8 +240,12 @@ public class TextEditor
              default :
                  System.out.println("Wrong input");
                  copy();
+                 break;
          }
-         System.out.println("Now press enter then TAB then CTRL+A and then press CTRL+C to copy , also press enter when done");
+        
+         br.close();
+         fr.close();
+         System.out.println("Now press CTRL+A and then press CTRL+C to copy the following content. Press enter when done");
          sc.nextLine();
          sc.nextLine();
          System.out.print("\f");
@@ -248,11 +254,9 @@ public class TextEditor
          System.out.print(str);
          sc.nextLine();
          System.out.println();
-         br.close();
-         fr.close();
     }
     
-    void paste() throws IOException
+    private void paste() throws IOException
     {
         System.out.println("Press CTRL+V and then ENTER");
         sc.nextLine();
@@ -301,7 +305,7 @@ public class TextEditor
         fr.close();        
     }
     
-    void cut() throws IOException 
+    private void cut() throws IOException 
     {  
         int stind,l,u,i,j;
         String cuttxt="",st;
@@ -361,7 +365,7 @@ public class TextEditor
         System.out.println();        
     }
     
-    void delete()throws IOException
+    private void delete()throws IOException
     {
         String st;   
         str="";
