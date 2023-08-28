@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.io.*;
+
 public class TextEditor
 {
 
@@ -22,6 +23,7 @@ public class TextEditor
             t.exit();  
         }
     }
+    
     public TextEditor()
     {
         sc=new Scanner(System.in);
@@ -108,6 +110,7 @@ public class TextEditor
         System.out.println("4.Delete");
         System.out.println("5.Exit");
         choice =sc.nextInt();
+    
         int i;
         System.out.print("\f"); 
         FileReader fr= new FileReader(fileName);
@@ -119,6 +122,7 @@ public class TextEditor
         str="";
         br.close();
         fr.close();
+        
         switch(choice)
         {
             case 1:                
@@ -141,6 +145,7 @@ public class TextEditor
                 editor();
         }        
         openFile();
+        
         System.out.println("OPTIONS");
         System.out.println("1.Edit more\n2.Close the text editor");
         int ch=sc.nextInt();
@@ -181,6 +186,7 @@ public class TextEditor
                     str=str+st+"\n";
                 }
                 break;
+        
              case 2:
                 System.out.println("Enter the numbers of first and last line to be copied:");
                 stind=sc.nextInt();
@@ -197,6 +203,7 @@ public class TextEditor
                         str=str+"\n"+st;
                 }
                 break;
+             
              case 3:
                 System.out.println("Enter the number of line to be copied");
                 stind=sc.nextInt();
@@ -212,6 +219,7 @@ public class TextEditor
                         str=st;
                 }
                 break;
+             
              case 4:
                 System.out.println("Enter the line number in which the characters to be copied exists");
                 stind=sc.nextInt();
@@ -237,6 +245,7 @@ public class TextEditor
                         str=st.substring(l,u);
                 }
                 break;
+             
              default :
                  System.out.println("Wrong input");
                  copy();
@@ -245,7 +254,8 @@ public class TextEditor
         
          br.close();
          fr.close();
-         System.out.println("Now press CTRL+A and then press CTRL+C to copy the following content. Press enter when done");
+         
+        System.out.println("Now press CTRL+A and then press CTRL+C to copy the following content. Press enter when done");
          sc.nextLine();
          sc.nextLine();
          System.out.print("\f");
@@ -263,10 +273,12 @@ public class TextEditor
         String st,past=sc.nextLine();
         FileReader fr= new FileReader(fileName);
         BufferedReader br = new BufferedReader(fr);        
+        
         System.out.println("Enter the line number in which this is to be pasted :");
         int line_no=sc.nextInt();
         System.out.println("Enter the index after which sequence is to be pasted :");
         int index=sc.nextInt();
+        
         for(int i=1;i<=nol;i++)
         {
             st=br.readLine();
@@ -295,6 +307,7 @@ public class TextEditor
         }
         br.close();
         fr.close();
+        
         FileWriter fw= new FileWriter(fileName);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(bw);
@@ -313,6 +326,7 @@ public class TextEditor
         BufferedReader br = new BufferedReader(fr); 
         System.out.println("Enter the line number in which the characters to be cutted exists:");
         stind=sc.nextInt();
+        
         if(stind<=0||stind>nol)
         {
             System.out.println("Wrong input");
@@ -322,6 +336,7 @@ public class TextEditor
         l=sc.nextInt();
         System.out.println("Enter the index of character till which sequence is to be copied :");
         u=sc.nextInt();                
+        
         for(i=1;i<=nol;i++)
         {
             st=br.readLine();
@@ -349,6 +364,7 @@ public class TextEditor
         }
         fr.close(); 
         br.close();
+        
         FileWriter fw= new FileWriter(fileName);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(bw);
@@ -374,6 +390,7 @@ public class TextEditor
         BufferedReader br = new BufferedReader(fr); 
         System.out.println("Enter the line number in which the sequence of characters to be deleted exists");
         stind=sc.nextInt();
+        
         if(stind<=0||stind>nol)
         {
             System.out.println("Wrong input");
@@ -383,6 +400,7 @@ public class TextEditor
         l=sc.nextInt();
         System.out.println("Enter the index of character till which sequence is to be deleted :");
         u=sc.nextInt();                
+        
         for(i=1;i<=nol;i++)
         {
             st=br.readLine();
@@ -409,6 +427,7 @@ public class TextEditor
         }
         fr.close(); 
         br.close();
+        
         FileWriter fw= new FileWriter(fileName);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(bw);
@@ -474,6 +493,7 @@ public class TextEditor
         {
             homePage();
         }
+        
     }
     
 }
